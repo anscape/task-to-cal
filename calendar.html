@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Calendar | Task to Cal.</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">Task to Cal.</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="task.html">Task Manager</a>
+          <a href="calendar.html" aria-current="page">Calendar</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-gap">
+      <section class="panel" aria-labelledby="calendar-heading">
+        <div class="panel-title-row">
+          <h1 id="calendar-heading">Weekly Calendar</h1>
+          <button id="resetBtn" class="btn btn-secondary" type="button">
+            Reset to seed data
+          </button>
+        </div>
+
+        <div class="calendar-controls" role="group" aria-label="Week navigation">
+          <button class="btn btn-secondary" id="prevWeekBtn" type="button">Previous week</button>
+          <button class="btn btn-secondary" id="todayBtn" type="button">Today</button>
+          <button class="btn btn-secondary" id="nextWeekBtn" type="button">Next week</button>
+          <p id="weekLabel" class="week-label" aria-live="polite"></p>
+        </div>
+
+        <div class="calendar-shell" aria-label="Week grid">
+          <div id="weekHeader" class="week-header-grid"></div>
+          <div id="weekEvents" class="week-events-grid"></div>
+        </div>
+
+        <div class="legend" aria-label="Status legend">
+          <span><i class="legend-swatch backlog"></i>Backlog</span>
+          <span><i class="legend-swatch in-progress"></i>In Progress</span>
+          <span><i class="legend-swatch done"></i>Done</span>
+        </div>
+      </section>
+
+      <aside class="panel event-details" aria-live="polite">
+        <h2>Task details</h2>
+        <div id="detailsHint" class="details-body">Click an event to view full details.</div>
+      </aside>
+    </main>
+
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/calendar.js" defer></script>
+  </body>
+</html>

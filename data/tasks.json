@@ -1,0 +1,42 @@
+[
+  {
+    "id": "seed_1",
+    "title": "Daily standup",
+    "description": "Team sync meeting.",
+    "start_datetime": "2026-02-03T09:00",
+    "end_datetime": "2026-02-03T09:30",
+    "status": "backlog"
+  },
+  {
+    "id": "seed_2",
+    "title": "Implement task board UI",
+    "description": "Build columns and task cards.",
+    "start_datetime": "2026-02-04T13:00",
+    "end_datetime": "2026-02-06T11:00",
+    "status": "in_progress"
+  },
+  {
+    "id": "seed_3",
+    "title": "Cross-week verification",
+    "description": "Validate events that span week boundary.",
+    "start_datetime": "2026-02-08T16:00",
+    "end_datetime": "2026-02-10T12:00",
+    "status": "backlog"
+  },
+  {
+    "id": "seed_4",
+    "title": "Bug triage",
+    "description": "Prioritize newly reported issues.",
+    "start_datetime": "2026-02-05T09:30",
+    "end_datetime": "2026-02-05T12:30",
+    "status": "done"
+  },
+  {
+    "id": "seed_5",
+    "title": "Client review",
+    "description": "Demo current progress and collect feedback.",
+    "start_datetime": "2026-02-05T10:30",
+    "end_datetime": "2026-02-05T14:00",
+    "status": "in_progress"
+  }
+]

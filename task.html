@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager | Task to Cal.</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">Task to Cal.</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="task.html" aria-current="page">Task Manager</a>
+          <a href="calendar.html">Calendar</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-gap">
+      <section class="panel" aria-labelledby="add-task-heading">
+        <div class="panel-title-row">
+          <h1 id="add-task-heading">Task Manager</h1>
+          <button id="resetBtn" class="btn btn-secondary" type="button">
+            Reset to seed data
+          </button>
+        </div>
+
+        <form id="taskForm" class="task-form" novalidate>
+          <label>
+            Title
+            <input
+              id="title"
+              name="title"
+              type="text"
+              required
+              minlength="1"
+              maxlength="120"
+              placeholder="Enter task title"
+            />
+          </label>
+
+          <label>
+            Description (optional)
+            <textarea
+              id="description"
+              name="description"
+              rows="2"
+              placeholder="Add helpful details"
+            ></textarea>
+          </label>
+
+          <div class="date-row">
+            <label>
+              Start date &amp; time
+              <input id="startDateTime" name="start_datetime" type="datetime-local" required />
+            </label>
+            <label>
+              End date &amp; time
+              <input id="endDateTime" name="end_datetime" type="datetime-local" required />
+            </label>
+          </div>
+
+          <p id="formError" class="form-error" role="alert" aria-live="polite"></p>
+
+          <button class="btn" type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section class="kanban-wrap" aria-label="Kanban board">
+        <article class="kanban-column" data-status="backlog">
+          <header>
+            <h2>Backlog</h2>
+          </header>
+          <div class="kanban-column-body" id="backlogColumn"></div>
+        </article>
+
+        <article class="kanban-column" data-status="in_progress">
+          <header>
+            <h2>In Progress</h2>
+          </header>
+          <div class="kanban-column-body" id="inProgressColumn"></div>
+        </article>
+
+        <article class="kanban-column" data-status="done">
+          <header>
+            <h2>Done</h2>
+          </header>
+          <div class="kanban-column-body" id="doneColumn"></div>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="editDialog" class="edit-dialog">
+      <form id="editForm" method="dialog" class="task-form" novalidate>
+        <h2>Edit Task</h2>
+        <input id="editId" type="hidden" />
+
+        <label>
+          Title
+          <input
+            id="editTitle"
+            name="title"
+            type="text"
+            required
+            minlength="1"
+            maxlength="120"
+          />
+        </label>
+
+        <label>
+          Description (optional)
+          <textarea id="editDescription" name="description" rows="2"></textarea>
+        </label>
+
+        <div class="date-row">
+          <label>
+            Start date &amp; time
+            <input id="editStartDateTime" name="start_datetime" type="datetime-local" required />
+          </label>
+          <label>
+            End date &amp; time
+            <input id="editEndDateTime" name="end_datetime" type="datetime-local" required />
+          </label>
+        </div>
+
+        <p id="editFormError" class="form-error" role="alert" aria-live="polite"></p>
+
+        <div class="dialog-actions">
+          <button class="btn" type="submit">Save</button>
+          <button id="cancelEditBtn" class="btn btn-secondary" type="button">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/task.js" defer></script>
+  </body>
+</html>
